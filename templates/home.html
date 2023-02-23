@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+{%load static%} 
+<html>
+<head>
+	<title>Malikarjun Viddhyashram</title>
+    <meta name ="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+	<!--<script src="{% static 'script.js' %}"></script>-->
+</head>
+<body>
+
+    <header>
+		<h2 class="logo">Logo</h2>
+		<nav class="navigation">
+			<!--<a href="#"><img src="{% static 'images/logo.png' %}" alt=""></a>-->
+			<a href="#">Home</a>
+			<a href="#">About Us</a>
+			<a href="#">Our Books</a>
+			<a href="#">Contact Us</a>
+			<button class="btnLogin-popup">Login</button>
+		</nav>
+	</header>	
+
+	<div class="wrapper">
+		<span class="icon-close">
+			<ion-icon name="close-outline"></ion-icon>	
+		</span>
+		<div class="form-box login">
+			<h2>Login</h2>
+			<form action="#">
+				<div class="input-box">
+					<span class="icon"><ion-icon name="mail-unread-outline"></ion-icon></span>
+					<input type="Email" required>
+					<label>Email</label>
+				</div>
+
+				<div class="input-box">
+					<span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+					<input type="Password" required>
+					<label>Password</label>
+				</div>
+
+				<div class="remember-forgot">
+					<label><input type="checkbox">Remember me</label>
+					<a href="#">Forgot Password</a>
+				</div>
+				<button type="submit" class="btn">Login</button>
+
+				<div class="login-register">
+					<p>Don't have an account? 
+						<a href="#" class="register-link">Register</a>
+					</p>
+
+				</div>
+			</form>
+		</div>
+
+		<div class="form-box register">
+			<h2>Registration</h2>
+			<form action="#">
+				<div class="input-box">
+					<span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+					<input type="text" required>
+					<label>Username</label>
+				</div>
+
+				<div class="input-box">
+					<span class="icon"><ion-icon name="mail-unread-outline"></ion-icon></span>
+					<input type="mail" required>
+					<label>Email</label>
+				</div>
+
+				<div class="input-box">
+					<span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+					<input type="Password" required>
+					<label>Password</label>
+				</div>
+
+				<div class="remember-forgot">
+					<label><input type="checkbox">I agree to the terms and conditions</label>
+					
+				</div>
+				<button type="submit" class="btn">Register</button>
+
+				<div class="login-register">
+					<p>Already have an account? 
+						<a href="#" class="login-link">Login</a>
+					</p>
+
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+
+		<!-- your JavaScript code goes here -->
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="text/javascript">
+		const wrapper = document.querySelector('.wrapper');
+        const loginLink = document.querySelector('.login-link');
+        const registerLink = document.querySelector('.register-link');
+		const btnPopup = document.querySelector('.btnLogin-popup');
+		const iconClose = document.querySelector('.icon-close');
+
+        registerLink.addEventListener('click', ()=> {
+			wrapper.classList.add('active');
+        });
+
+        loginLink.addEventListener('click', ()=> {
+			wrapper.classList.remove('active');
+        });
+		btnPopup.addEventListener('click', ()=> {
+			wrapper.classList.add('active-popup');
+        });
+		iconClose.addEventListener('click', ()=> {
+			wrapper.classList.remove('active-popup');
+        });
+	</script>
+</body>
+</html> 
